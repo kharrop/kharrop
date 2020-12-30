@@ -1,0 +1,7 @@
+.active a {
+  color: red;
+}
+
+.nav li {
+  margin-right: 12px;
+}

@@ -1,6 +1,10 @@
 module.exports = {
-  purge: ['./pages/**/*.js', './posts/**/*.js', './components/**/*.js'],
-  darkMode: false, // or 'media' or 'class'
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true
+  },
+  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {}
   },

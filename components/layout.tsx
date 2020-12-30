@@ -1,9 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import styles from '../styles/layout.module.css'
 
 export const siteTitle = 'Kelly Harrop, 🎨 👩🏻‍💻'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const router = useRouter()
   return (
     <div>
       <Head>
@@ -28,18 +31,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
         </div>
         <nav>
-          <ul className="inline-flex ml-6">
-            <li>
+          <ul className={`inline-flex ml-12 ${styles.nav}`}>
+            <li className={router.pathname == '/user-guide' ? 'active' : ''}>
               <Link href="/user-guide">
                 <a>User guide</a>
               </Link>
             </li>
-            <li>
+            <li className={router.pathname == '/timeline' ? 'active' : ''}>
               <Link href="/timeline">
                 <a>Timeline</a>
               </Link>
             </li>
-            <li>
+            <li className={router.pathname == '/blog' ? 'active' : ''}>
               <Link href="/blog">
                 <a>Blog</a>
               </Link>
