@@ -1,7 +1,47 @@
-.active a {
-  color: red;
+.header {
+  align-items: center;
+  display: flex;
+  min-height: 100px;
 }
 
-.nav li {
+.header > div {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.group {
+  align-items: center;
+  display: flex;
+}
+
+.nav .group {
+  align-items: baseline;
+}
+
+.group li:not(:last-child) {
   margin-right: 12px;
+}
+
+.group a {
+  display: block;
+  padding: 12px;
+}
+
+.group .logo {
+  padding: 0;
+  margin-right: 12px;
+}
+
+.group span {
+  border-bottom: 2px solid transparent;
+  transition: border 0.15s ease-in;
+}
+
+.active span {
+  border-bottom: 2px solid #80cbc4;
+}
+
+.active a {
+  opacity: 1;
 }

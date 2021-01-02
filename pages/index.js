@@ -1,28 +1,31 @@
-import { useEffect, useState } from 'react'
 import { PostPreview } from '../components/postPreview'
 import { posts } from '../utils/getAllPosts'
-import { useTheme } from 'next-themes'
 
 export default function IndexPage() {
-  const [isMounted, setIsMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-  const switchTheme = () => {
-    if (isMounted) {
-      setTheme(theme === 'light' ? 'dark' : 'light')
-    }
-  }
   return (
     <>
-      <section></section>
-      {posts.slice(0, 1).map(post => (
-        <PostPreview key={post.link} post={post} />
-      ))}
-      <button onClick={switchTheme}>Change theme</button>
+      <article>
+        <section id="intro" className="section-header mb-20">
+          <h1>Kelly Harrop is tinkering with design systems at Intuit.</h1>
+          <div className="grid gap-x-9 grid-flow-col auto-colos-max">
+            <p>
+              Hello! 👋 <span className="spacer" />
+              I’m a UX Engineer specialized in crafting large-scale design
+              system solutions so that teams can easily get what they need to
+              deliver personalized experiences.
+            </p>
+            <p>
+              I love helping engineers and designers speak the same language,
+              while coaching teams to consider design-thinking principles and
+              platform limitations.
+            </p>
+          </div>
+        </section>
+
+        {posts.slice(0, 1).map(post => (
+          <PostPreview key={post.link} post={post} />
+        ))}
+      </article>
     </>
   )
 }
-
-// My blog: https://www.ibrahima-ndaw.com/

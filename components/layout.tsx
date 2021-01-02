@@ -1,3 +1,8 @@
+import React from 'react'
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
+import { LightModeIcon, DarkModeIcon } from './icons'
+
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -7,50 +12,87 @@ export const siteTitle = 'Kelly Harrop, 🎨 👩🏻‍💻'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
+  const [isMounted, setIsMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+  const switchTheme = () => {
+    if (isMounted) {
+      setTheme(theme === 'light' ? 'dark' : 'light')
+    }
+  }
+
   return (
     <div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.now.sh/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Kelly Harrop, UX Engineer" />
+        <title>Kelly Harrop, 🎨 👩🏻‍💻</title>
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className="inline-flex">
-        <div className="logo">
-          <Link href="/">
-            <a>Kelly Harrop</a>
-          </Link>
+      <header
+        className={`${styles.header} border-b border-gray-200 dark:border-gray-800`}
+      >
+        <div className="content-wrapper">
+          <nav className={styles.nav}>
+            <ul className={styles.group}>
+              <li>
+                <Link href="/">
+                  <a
+                    className={`${styles.logo} text-xl font-semibold text-gray-800 dark:text-white hover:no-underline`}
+                  >
+                    Kelly Harrop
+                  </a>
+                </Link>
+              </li>
+              <li
+                className={
+                  router.pathname == '/working-style' ? styles.active : ''
+                }
+              >
+                <Link href="/working-style">
+                  <a className="text-gray-800 opacity-80 dark:text-white hover:no-underline hover:opacity-100 transition duration-100">
+                    <span className="pb-1">Working Style</span>
+                  </a>
+                </Link>
+              </li>
+              <li className={router.pathname == '/blog' ? styles.active : ''}>
+                <Link href="/blog">
+                  <a className="text-gray-800 opacity-80 dark:text-white hover:no-underline hover:opacity-100 transition duration-100">
+                    <span className="pb-1">Blog</span>
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <div className={styles.group}>
+            <ul>
+              <li>
+                {isMounted && (
+                  <button
+                    className="p-3 text-center transition rounded-full hover:shadow-lg"
+                    onClick={switchTheme}
+                    title={`Activate ${
+                      theme === 'light' ? 'dark' : 'light'
+                    } mode`}
+                    aria-label={`Activate ${
+                      theme === 'light' ? 'dark' : 'light'
+                    } mode`}
+                  >
+                    {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+                  </button>
+                )}
+              </li>
+            </ul>
+          </div>
         </div>
-        <nav>
-          <ul className={`inline-flex ml-12 ${styles.nav}`}>
-            <li className={router.pathname == '/user-guide' ? 'active' : ''}>
-              <Link href="/user-guide">
-                <a>User guide</a>
-              </Link>
-            </li>
-            <li className={router.pathname == '/timeline' ? 'active' : ''}>
-              <Link href="/timeline">
-                <a>Timeline</a>
-              </Link>
-            </li>
-            <li className={router.pathname == '/blog' ? 'active' : ''}>
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
       </header>
-      <main>{children}</main>
+      <main className="mt-28">
+        <div className="content-wrapper">{children}</div>
+      </main>
     </div>
   )
 }
