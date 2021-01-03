@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { PostHeader } from './postHeader'
 
 export const PostPreview = ({ post }) => {
   const {
@@ -9,17 +8,18 @@ export const PostPreview = ({ post }) => {
 
   return (
     <article>
-      <PostHeader meta={meta} />
       <Link href={'/blog' + link}>
-        <a>Read more &rarr;</a>
+        <a className="post-preview grid gap-x-4 grid-flow-col">
+          <div className="content">
+            <h2>{meta.title}</h2>
+            <div className="description">{meta.description}</div>
+
+            <div className="notes">
+              <time>{meta.date}</time> • <span>{meta.readTime} min read</span>{' '}
+            </div>
+          </div>
+        </a>
       </Link>
-      <style jsx>
-        {`
-          article {
-            margin-bottom: 3rem;
-          }
-        `}
-      </style>
     </article>
   )
 }

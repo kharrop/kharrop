@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { LightModeIcon, DarkModeIcon } from './icons'
-
+import Aside from './aside'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -82,7 +82,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       theme === 'light' ? 'dark' : 'light'
                     } mode`}
                   >
-                    {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
+                    {theme === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
                   </button>
                 )}
               </li>
@@ -90,9 +90,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </header>
-      <main className="mt-28">
-        <div className="content-wrapper">{children}</div>
-      </main>
+      <div className="mt-28 content-wrapper grid gap-x-16 grid-flow-col lg:grid-flow-row">
+        <main>{children}</main>
+        <aside>
+          <Aside />
+        </aside>
+      </div>
     </div>
   )
 }
