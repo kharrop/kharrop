@@ -41,6 +41,9 @@ module.exports = {
               'font-weight': '500',
               'padding-top': '20px',
               'margin-top': '1.8'
+            },
+            img: {
+              'border-radius': '6px'
             }
           }
         },
