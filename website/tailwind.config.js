@@ -33,11 +33,48 @@ module.exports = {
 
         sm: { max: '639px' }
         // => @media (max-width: 639px) { ... }
-      }
+      },
+      typography: theme => ({
+        DEFAULT: {
+          css: {
+            h2: {
+              'font-weight': '500',
+              'padding-top': '20px',
+              'margin-top': '1.8'
+            }
+          }
+        },
+        dark: {
+          css: {
+            h2: {
+              color: theme('colors.gray.200'),
+              'font-weight': '400'
+            },
+            h3: {
+              color: theme('colors.gray.200'),
+              'font-weight': '400'
+            },
+            color: theme('colors.gray.200'),
+            'font-weight': '300',
+            strong: {
+              color: theme('colors.gray.200'),
+              'font-weight': '500'
+            },
+            a: {
+              color: theme('colors.blue.500'),
+              '&:hover': {
+                color: theme('colors.blue.500')
+              }
+            }
+          }
+        }
+      })
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      typography: ['dark']
+    }
   },
   plugins: [require('@tailwindcss/typography')]
 }

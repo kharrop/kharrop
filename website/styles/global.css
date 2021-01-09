@@ -17,7 +17,7 @@ h3,
 h4,
 p {
   transition: color 250ms ease-in 0s, background-color 350ms ease-in 0s,
-    border-color 360ms ease-in 0.1s;
+    border-color 360ms ease-in 0.1s, font-weight 250ms ease-in;
 }
 
 * {
@@ -172,4 +172,37 @@ dd {
 .layout {
   grid-template-columns: 1fr auto;
   @apply lg:grid-cols-none;
+}
+
+.dark .banner g g path {
+  transition: stroke 0.2s ease-in-out;
+  stroke: #1e2835;
+}
+
+.dark .banner g g {
+  filter: invert(75%);
+}
+
+.icon-link {
+  position: relative;
+}
+
+h2:hover .icon-link:before {
+  content: '#';
+  left: -30px;
+  padding-right: 16px;
+  position: absolute;
+  opacity: 0.5;
+  transition: opacity 0.1s ease-in;
+}
+
+h2 .icon-link:hover:before {
+  opacity: 1;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
 }

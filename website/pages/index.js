@@ -1,17 +1,13 @@
 import { PostPreview } from '../components/postPreview'
 import { posts } from '../utils/getAllPosts'
-import Image from 'next/image'
+import Banner from '../public/images/welcome-banner.svg'
+import styles from '../styles/index.module.css'
 
 export default function IndexPage() {
   return (
     <>
-      <Image
-        src="/images/welcome-banner.svg"
-        alt="Kelly participating in a panel at Squares Conference"
-        layout="responsive"
-        width={960}
-        height={300}
-      />
+      <Banner viewBox="0 0 965 294" className={`banner ${styles.banner}`} />
+
       <section id="intro" className="section-header mb-20">
         <h1 className="text-5xl mb-8 leading-snug sm:text-4xl sm:leading-normal">
           Buttons. Badges. <br /> Battlestar Galactica.
