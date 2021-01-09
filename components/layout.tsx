@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Kelly Harrop, UX Engineer" />
-        <title>Kelly Harrop, 🎨 👩🏻‍💻</title>
+        <title>Kelly Harrop, UX Engineer</title>
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
@@ -90,9 +90,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </header>
-      <div className="mt-28 content-wrapper grid gap-x-16 grid-flow-col lg:grid-flow-row">
+      <div className="layout mt-28 content-wrapper grid gap-x-16 grid-flow-col lg:grid-flow-row">
         <main>{children}</main>
-        <aside>
+        <aside className="w-48 lg:w-full">
           <Aside />
         </aside>
       </div>

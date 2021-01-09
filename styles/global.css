@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +7,7 @@ body {
   padding: 0;
   margin: 0;
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 body,
@@ -26,7 +24,8 @@ p {
   box-sizing: border-box;
 }
 
-a {
+a,
+.prose a {
   @apply text-blue-600 dark:text-blue-500;
   text-decoration: none;
 }
@@ -50,9 +49,6 @@ main {
   .content-wrapper {
     padding-inline: 16px;
   }
-  header {
-    min-height: auto !important;
-  }
   header a,
   nav li {
     padding: 0 !important;
@@ -75,10 +71,10 @@ header a {
 }
 
 h1 {
-  font-size: 3em;
-  font-weight: 300;
+  font-size: 2.4em;
+  font-weight: 200;
   margin-top: 0;
-  margin-bottom: 0.88em;
+  @apply mb-4;
   line-height: 1.3;
 }
 
@@ -92,7 +88,7 @@ h2 {
 
 h3 {
   font-size: 1.1em;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0.6em;
   line-height: 1.6;
 }
@@ -112,7 +108,7 @@ h4 {
 
 p {
   @apply text-gray-700 dark:text-gray-300;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 code {
@@ -152,14 +148,11 @@ dd {
 }
 
 .featured-post a {
-  @apply bg-white rounded-xl dark:bg-gray-800;
+  @apply bg-white rounded-tl-xl rounded-br-xl dark:bg-gray-800;
   transition: box-shadow 0.2s ease-in;
-  @apply p-2;
-}
-
-.post-preview .content {
   @apply p-6;
 }
+
 .featured-post a:hover {
   @apply shadow-lg;
 }
@@ -174,4 +167,9 @@ dd {
 .disabled:hover {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.layout {
+  grid-template-columns: 1fr auto;
+  @apply lg:grid-cols-none;
 }

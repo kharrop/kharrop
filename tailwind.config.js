@@ -18,9 +18,6 @@ module.exports = {
           100: '#F1F4F9'
         }
       },
-      fontFamily: {
-        sans: ['"Roboto"', ...defaultTheme.fontFamily.sans]
-      },
       screens: {
         '2xl': { max: '1535px' },
         // => @media (max-width: 1535px) { ... }
