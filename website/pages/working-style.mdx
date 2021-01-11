@@ -1,10 +1,18 @@
 import Image from 'next/image'
+import BlogPost from '../components/blogPost'
+
+export const meta = {
+  title: "It's okay to be wrong",
+  description: '',
+  date: 'January 11, 2021',
+  readTime: '3'
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>
 
 # Kelly's Working Style
 
 A personal (ever-evolving) guide for how I work.
-
-<div className="prose dark:prose-dark">
 
 ## People describe me as...
 
@@ -29,7 +37,7 @@ A personal (ever-evolving) guide for how I work.
 - **Sweating the details**: I strongly believe the details separate mediocre experiences from delightful ones
 - **Collaborating**: I love when everyone on the team, regardless of discipline, is invested in solving problems together
 
-## How I problem solve
+## How I solve problems
 
 1. **Talk to real people**: I first schedule time with people who could be having the same problem to understand their experience and see if they have suggestions for improvement
 2. **Analyze the data**: Document my learnings and define common themes
@@ -52,5 +60,3 @@ A personal (ever-evolving) guide for how I work.
 - Stay more focused when explaining something, instead of getting lost in the details
 - Pause more when speaking to allow people to ask questions
 - Being more explicit when it comes to asking for help on projects
-
-</div>

@@ -187,22 +187,36 @@ dd {
   position: relative;
 }
 
-h2:hover .icon-link:before {
+h2:hover .icon-link:before,
+h3:hover .icon-link:before {
   content: '#';
-  left: -30px;
+  @apply text-gray-400 dark:text-gray-700;
+  margin-left: -32px;
   padding-right: 16px;
   position: absolute;
   opacity: 0.5;
   transition: opacity 0.1s ease-in;
 }
 
-h2 .icon-link:hover:before {
+h2 .icon-link:hover:before,
+h3 .icon-link:hover:before {
   opacity: 1;
 }
 
-a.anchor {
-  display: block;
-  position: relative;
-  top: -250px;
-  visibility: hidden;
+.theme-enter {
+  opacity: 0;
+}
+
+.theme-enter.theme-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.theme-leave {
+  opacity: 1;
+}
+
+.theme-leave.theme-leave-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
 }

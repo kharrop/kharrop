@@ -45,6 +45,7 @@ export default function Aside() {
         </dt>
         <dd>Plano, TX (remote)</dd>
       </dl>
+      <p className="text-xs">Written, designed, and coded by Kelly Harrop.</p>
     </div>
   )
 }

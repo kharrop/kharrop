@@ -1,0 +1,117 @@
+import BlogPost from '../../../components/blogPost'
+
+export const meta = {
+  title: "It's okay to be wrong",
+  description:
+    'How wrong decisions can lead to personal and professional growth',
+  date: 'January 11, 2021',
+  readTime: 5
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>
+
+As kids, we're often punished for not knowing the right answers. Take a look at the SAT - if you answer a question incorrectly, you get more points off than simply not answering at all. Inaction is rewarded over a wrong action when trying to solve a problem.
+
+This kind of negative reinforcement can carry over into adulthood where we feel like inaction is a safer option than trying something that could result in a less than ideal outcome.
+
+## Working with your partners
+
+In the software industry, the risk of feeling wrong can result in dysfunctional teams and a lack of trust in our business partners, such as:
+
+- Developers not pushing back on design in case they are wrong about what "good" design is or don't have all the business context
+- Designers not asking developers if a design is feasible because it could result in having to rework and already "approved" design
+- Managers worried about not communicating out the right information from their team, which means asking the team to provide that data themselves
+- QA not wanting to ask what they are testing against because they are worried about being wrong about the acceptance criteria
+
+We need to be asking ourselves: how can we encourage more collaboration and questions, no matter what role or level of experience? By feeling free to admit **publicly** when we're wrong, and more importantly... that it's okay.
+
+## Growth through shame
+
+When we're wrong, we feel ashamed. Our natural instinct is to not repeat the same mistake. The easiest way to protect ourselves is to not even take the risk of being in that situation again. This avoidance tactic tends to backfire though, because the team ends up suffering over all.
+
+If we can embrace being wrong though and working past our emotions, we can begin to start to see how we can grow from these experiences.
+
+Then next time you feel shame through making a wrong decision, keep in mind:
+
+- Awareness of being wrong is a strength
+- You don't learn from always being right
+- Others will also be wrong, and now you have an opportunity to teach!
+
+## Code/design reviews
+
+Providing a constructive review is typically the main way people learn that they didn't do something the right way. We tend to take for granted that "best practices" are widely known, but really it depends on how people learned. Consider the following:
+
+- A professor/bootcamp didn't cover this particular topic
+- Best practices can evolve over time
+- A previous company did it a certain way
+- Someone that is self-taught hasn't stumbled across that scenario before
+
+When we take into consideration that not everyone has the same traditional "101" training, reviews are sometimes the first time someone realizes that their method was incorrect. Providing constructive feedback is not only helpful for the person receiving it, but if done publicly (like a GitHub or Figma comment), it can help others learn the lesson at the same time.
+
+## Process & tooling
+
+Depending on the size of your team, sometimes code/design reviews can't be as thorough. That's okay! Teams can still self-improve and learn through following the right processes and tooling.
+
+### Linting
+
+Linting is a great way to ensure that code follows consistent standards. I use [this markdown linter](https://github.com/DavidAnson/vscode-markdownlint) to make sure my posts follow consistent rules.
+
+It's also super conveninent to highlight:
+
+- CSS standards in terms of white spacing, import order
+- Unused variables
+- Outdated concatenation practices
+- Code formatting issues
+- And more!
+
+### Design and code libraries
+
+Design libraries are a great way to ensure that designs reflect their coded counterpart's limitations. Especially with Figma's newest [variant support](https://www.figma.com/best-practices/creating-and-organizing-variants/), it's super convenient for designers to understand what can be modified when referencing a given component.
+
+In addition, designers and developers can also reference a coded library version using something like [Storybook](https://storybook.js.org/) to see how the coded component actually works. It's also a great tool for implementation documentation, understanding how the component changes in different environments, and [works for native platforms](https://medium.com/@vasikarla.raj/storybook-for-native-d772654c7133) too!
+
+### Reviews in GitHub
+
+The best way to review code, is in the same place the code is. When designers and developers are speaking the same language, it makes it much easier to understand feedback.
+
+- `Before`: (Screenshot) THis button text is too dark, should be lighter
+- `After`: (Line 224 comment) Change class to `text-gray-300`
+
+### Examples of clear, objective feedback
+
+- I noticed you used a lot of `!important`s in your CSS, but it's important we avoid these because they can cause issues with specificity between our spreadsheets. You can achieve the same type of behavior by using more specific selectors.
+- I see that you're using the `tabs` pattern for navigation on this screen, but our experiences use `links` because they are semantically correct as the user is taken to a different page, versus the content updating below.
+
+Note that these examples explain **why** something is wrong, instead of just explaining what to fix. In doing so, you're not only providing guidance to help others, but also amping up your own credibility.
+
+## Moving forward through uncertainty
+
+At Amazon, Jeff Bezos talks about the concept of [Day 1 vs Day 2](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders) companies. One of the main points that stood out is: not everyone needs to agree to move forward, but they can still commit.
+
+Disagreement doesn't need to result in death (to an idea).
+
+It's okay to move forward in a direction, even though you may think it's the wrong one. We don't learn unless we try. Whether the experiment is a success or a failure, you're left with a guaranteed reward for the effort: data.
+
+And with that data, we can make informed decisions on what to experiment with next.
+
+If we can agree to commit to solving the problem, versus having everyone on board with the solution, we can set aside our egos and embrace a more open-minded and customer-focused approach.
+
+## What helped me grow
+
+It's easy to be dismissive of feedback when you think you're always right. What does this person know after all? Doesn't my solution work?
+
+Just because something works, doesn't mean it can't be improved. This current website is an example of that - yes it technically functions, but there is so much I want to improve. Cleaner implementations, better crafted components. But how do I know there is even something to improve in the first place?
+
+By being curious. Getting inspired by others. Exploring outside of my bubble and finding what others with different background have crafted. Diversity is so important, because we don't grow in our own echo chambers.
+
+### Questions I typically ask
+
+- How did you know about this approach? (I learn about a new site/resource)
+- What makes this method better than mine? (I learn about limitations and how things work)
+- Since when was this a thing? (I learn if I'm just behind the times, or if I never knew the right approach)
+
+## Wrapping up
+
+When we start putting down our barriers and start taking constructive feedback as a gift, we can start to grow and learn from our mistakes.
+
+What were you wrong about today? What did you learn?

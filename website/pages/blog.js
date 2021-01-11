@@ -7,9 +7,13 @@ export default function IndexPage() {
       <h1>Blog</h1>
       <p>Two articles each month starting January 2021. Allegedly.</p>
       <section id="blog-list" className="mt-12">
-        {posts.map(post => (
-          <PostPreview key={post.link} post={post} />
-        ))}
+        <ul>
+          {posts.map(post => (
+            <li className="mb-16">
+              <PostPreview key={post.link} post={post} />
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   )

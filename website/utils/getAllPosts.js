@@ -1,11 +1,9 @@
 function importAll(r) {
-  return r
-    .keys()
-    .reverse()
-    .map(fileName => ({
-      link: fileName.substr(1).replace(/\/index\.mdx$/, ''),
-      module: r(fileName)
-    }))
+  return r.keys().map(fileName => ({
+    link: fileName.substr(1).replace(/\.mdx$/, ''),
+    module: r(fileName)
+  }))
+  // .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export const posts = importAll(

@@ -1,15 +1,16 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { LightModeIcon, DarkModeIcon } from './icons'
-
+import DarkModeIcon from '../public/icons/dark.svg'
+import LightModeIcon from '../public/icons/light.svg'
 import Aside from './aside'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from '../styles/layout.module.css'
+import { TransitionGroup } from 'react-transition-group'
 
-export const siteTitle = 'Kelly Harrop, 🎨 👩🏻‍💻'
+export const siteTitle = 'Kelly Harrop, UX Engineer'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
@@ -30,7 +31,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Kelly Harrop, UX Engineer" />
-        <title>Kelly Harrop, UX Engineer</title>
+        <title>{siteTitle}</title>
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
@@ -74,7 +75,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li>
                 {isMounted && (
                   <button
-                    className="p-3 text-center transition rounded-full hover:shadow-lg"
+                    className="p-3 text-center transition rounded-full hover:bg-gray-200 dark:hover:bg-gray-800"
                     onClick={switchTheme}
                     title={`Activate ${
                       theme === 'light' ? 'dark' : 'light'
@@ -83,7 +84,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       theme === 'light' ? 'dark' : 'light'
                     } mode`}
                   >
-                    {theme === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
+                    <TransitionGroup
+                      transitionName="theme"
+                      transitionEnterTimeout={300}
+                      transitionLeaveTimeout={300}
+                    >
+                      {theme === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
+                    </TransitionGroup>
                   </button>
                 )}
               </li>
@@ -91,9 +98,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </header>
-      <div className="layout mt-28 content-wrapper grid gap-x-16 grid-flow-col lg:grid-flow-row">
+      <div className="layout mt-28 content-wrapper grid gap-x-28 grid-flow-col lg:grid-flow-row">
         <main>{children}</main>
-        <aside className="w-48 lg:w-full">
+        <aside className="w-40 lg:w-full">
           <Aside />
         </aside>
       </div>

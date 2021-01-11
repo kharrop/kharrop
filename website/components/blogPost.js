@@ -5,7 +5,7 @@ export default function BlogPost({ children, meta }) {
     <>
       <PostHeader meta={meta} isBlogPost />
 
-      <article class="prose dark:prose-dark">{children}</article>
+      <article className="prose dark:prose-dark mb-20">{children}</article>
     </>
   )
 }
