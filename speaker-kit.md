@@ -4,9 +4,9 @@
 
 ![Profile picture](https://bit.ly/2YD0h0K)
 
-- **Name**: Kelly Harrop (pronounced HAIR-UP)
-- **Title**: Sr. UX Engineer @ Intuit (Intuit Design System)
-- **Pronouns**: She/her
+**Name**: Kelly Harrop (pronounced HAIR-UP)  
+**Title**: Sr. UX Engineer @ Intuit (Intuit Design System)    
+**Pronouns**: She/her
 
 
 
