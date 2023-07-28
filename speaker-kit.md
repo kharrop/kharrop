@@ -22,9 +22,7 @@
 
 ## Bio
 
-Kelly Harrop is a UX Engineer specialized in crafting large-scale design system solutions. She is passionate about helping engineers and designers speak the same language, while coaching teams to consider design-thinking principles and platform limitations.
-
-Her current focus is leading Intuit's design data management system, which supports cross product and platform design changes through the use of design tokens.
+Kelly Harrop is a Senior Software Engineer specialized in crafting multi-brand design system solutions, currently working as a technical lead on the Consumer Group Design System at Intuit. She is passionate about helping engineers and designers speak the same language, while coaching teams on shipping accessible, cross-platform experiences.
 
 In her free time, she enjoys video games, assembling Lego kits, and watching horror movies.
 
