@@ -2,7 +2,7 @@
 
 **Last updated**: March 7, 2021
 
-![Profile picture](https://bit.ly/2YD0h0K)
+![Profile picture](https://pbs.twimg.com/profile_images/1244360737545490433/y_RgmlrB_400x400.jpg)
 
 **Name**: Kelly Harrop (pronounced HAIR-UP)  
 **Title**: Sr. UX Engineer @ Intuit (Intuit Design System)    
